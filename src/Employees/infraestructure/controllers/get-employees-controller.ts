@@ -13,7 +13,7 @@ export class GetEmployeesController {
       else
         res.status(404).send({
           status: "error",
-          msn: `No existen empleados`,
+          msn: `There's no employees`,
         });
     } catch (error) {
       res.status(204).send({

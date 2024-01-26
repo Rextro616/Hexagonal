@@ -4,8 +4,8 @@ export class DeleteEmployee {
   constructor(private employeeRepository: EmployeeRepository) {}
   async run(employeeId: number): Promise<string> {
     try {
-      const findTask = await this.employeeRepository.getById(employeeId);
-      if (findTask) {
+      const findEmployee = await this.employeeRepository.getById(employeeId);
+      if (findEmployee) {
         await this.employeeRepository.deleteById(employeeId);
         return "Employee deleted";
       }
