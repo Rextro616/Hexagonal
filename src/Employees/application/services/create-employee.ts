@@ -5,9 +5,11 @@ export class CreateEmployee {
   constructor(private readonly employeeRepository: EmployeeRepository) {}
   async run(employee: Employee) {
     try {
-      const employeeCreated = await this.employeeRepository.save(employee);
+      console.log(employee);
+      const employeeCreated = await this.employeeRepository.save(employee); 
       return employeeCreated;
-    } catch (err) {
+    } catch (err) {      
+      console.log(err)
       return null;
     }
   }

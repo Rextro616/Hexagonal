@@ -22,7 +22,7 @@ export class MySqlEmployee implements EmployeeRepository {
       .then((res: any) => res.values as Employee);
   }
   deleteById(employeeId: number): Promise<string> {
-    const query = "delete from users where id = ?";
+    const query = "delete from employee where id = ?";
     return db.execute(query, [employeeId]).then((res: any) => res[0] as string);
   }
 }

@@ -9,7 +9,8 @@ export class CreateEmployeeController {
     try {
       const employee = req.body;
       const result = await this.createEmployee.run(employee);
-      res.status(201).send(result);
+      console.log(result);
+      res.status(200).send(result);
     } catch (error) {
       res.status(204).send({
         status: "error",
